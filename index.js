@@ -16,8 +16,11 @@ StartEl.addEventListener("click", StartCounter);
 const PauseEl = document.getElementById("pause");
 PauseEl.addEventListener("click", PauseCounter);
 
-const FiveMinutesEl = document.getElementById("fiveMinutes");
-FiveMinutesEl.addEventListener("click", FiveMinutes);
+const ResetEl = document.getElementById("reset");
+ResetEl.addEventListener("click", ResetCounter);
+
+  const FiveMinutesEl = document.getElementById("fiveMinutes");
+  FiveMinutesEl.addEventListener("click", FiveMinutes);
 
 const TenMinutesEl = document.getElementById("tenMinutes");
 TenMinutesEl.addEventListener("click", TenMinutes);
@@ -25,8 +28,8 @@ TenMinutesEl.addEventListener("click", TenMinutes);
 const FifteenMinutesEl = document.getElementById("fifteenMinutes");
 FifteenMinutesEl.addEventListener("click", FifteenMinutes);
 
-const TwentyMinutesEl = document.getElementById("twentyMinutes");
-TwentyMinutesEl.addEventListener("click", TwentyMinutes);
+  const TwentyMinutesEl = document.getElementById("twentyMinutes");
+  TwentyMinutesEl.addEventListener("click", TwentyMinutes);
 
 function StartCounter() {
   if (counterInterval) return;

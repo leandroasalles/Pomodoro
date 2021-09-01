@@ -6,19 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
+    <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="pomodoro">
+        <div class="pomodoro-header">
+            <p class="pomodoro-title">Pomodoro Clock</p>
+            <p class="pomodoro-subtitle">Current Session</p>
+        </div>
         <div class="counter-container">
             <span id="minute-id" class="minute-class">00</span>
+            <span id="dots" class="dots-class">:</span>
             <span id="second-id" class="second-class">00</span>
-        </div>
-
+        </div>    
         <div class="button-container">
-            <button id="start">Start</button>
-            <button id="pause">Pause</button>
+            <button id="start"><i data-feather="play"></i></button>
+            <button id="pause"><i data-feather="pause"></i></button>
+            <button id="reset"><i data-feather="refresh-ccw"></i></button>
 
         </div>
 
@@ -29,7 +35,10 @@
             <button id="twentyMinutes">20:00</button>
         </div>
     </div>
- 
+
+    <script>
+        feather.replace()
+      </script>
     <script type="text/javascript" src="index.js"></script>
 </body>
 
