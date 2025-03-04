@@ -1,13 +1,15 @@
-let minute, second, counterInterval = undefined
+let minute,
+  second,
+  counterInterval = undefined;
 
 const MinuteEl = document.getElementById("minute-id");
 const SecondEl = document.getElementById("second-id");
 
-ResetCounter()
+ResetCounter();
 
 function updateEl() {
   MinuteEl.innerHTML = minute < 10 ? `0${minute}` : minute;
-  SecondEl.innerHTML = second < 10 ? `0${second}` : second;;
+  SecondEl.innerHTML = second < 10 ? `0${second}` : second;
 }
 
 const StartEl = document.getElementById("start");
@@ -19,8 +21,8 @@ PauseEl.addEventListener("click", PauseCounter);
 const ResetEl = document.getElementById("reset");
 ResetEl.addEventListener("click", ResetCounter);
 
-  const FiveMinutesEl = document.getElementById("fiveMinutes");
-  FiveMinutesEl.addEventListener("click", FiveMinutes);
+const FiveMinutesEl = document.getElementById("fiveMinutes");
+FiveMinutesEl.addEventListener("click", FiveMinutes);
 
 const TenMinutesEl = document.getElementById("tenMinutes");
 TenMinutesEl.addEventListener("click", TenMinutes);
@@ -28,27 +30,26 @@ TenMinutesEl.addEventListener("click", TenMinutes);
 const FifteenMinutesEl = document.getElementById("fifteenMinutes");
 FifteenMinutesEl.addEventListener("click", FifteenMinutes);
 
-  const TwentyMinutesEl = document.getElementById("twentyMinutes");
-  TwentyMinutesEl.addEventListener("click", TwentyMinutes);
+const TwentyMinutesEl = document.getElementById("twentyMinutes");
+TwentyMinutesEl.addEventListener("click", TwentyMinutes);
 
 function StartCounter() {
   if (counterInterval) return;
 
-     counterInterval = setInterval( () => {
-       if (second === 0) {
-         if (minute === 0) {
-          destroy(counterInterval);
-         } else {
-           second = 59;
-           --minute;
-         }
-       } else {
-         --second;
-       }
-       updateEl();
-     }, 1000);
-   }
-  
+  counterInterval = setInterval(() => {
+    if (second === 0) {
+      if (minute === 0) {
+        destroy(counterInterval);
+      } else {
+        second = 59;
+        --minute;
+      }
+    } else {
+      --second;
+    }
+    updateEl();
+  }, 1000);
+}
 
 function PauseCounter() {
   destroy(counterInterval);
@@ -56,15 +57,15 @@ function PauseCounter() {
 
 function ResetCounter() {
   destroy(counterInterval);
-    minute = 05;
-    second = 00;
-    updateEl();
+  minute = 05;
+  second = 00;
+  updateEl();
 }
 
- function destroy() {
-   clearInterval(counterInterval);
-   counterInterval = undefined
- }
+function destroy() {
+  clearInterval(counterInterval);
+  counterInterval = undefined;
+}
 
 function FiveMinutes() {
   destroy(counterInterval);
@@ -92,4 +93,4 @@ function TwentyMinutes() {
   minute = 20;
   second = 0;
   updateEl();
-} 
+}
